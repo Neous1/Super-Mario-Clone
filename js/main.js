@@ -1,17 +1,38 @@
-PlayState = {};
-
-PlayState.preload = function () {
-    this.game.load.image('background', 'images/NES - Super Mario Bros - World 1-1.png');
-};
-
-// create game entities and set up world here
-PlayState.create = function () {
-    this.game.add.image(0, 0, 'background');
-};
+var game;
+var score;
+// var soundOn = true;
+// var musicOn = true;
+var useLandscape=true;
 
 window.onload = function () {
-//    let game = new Phaser.Game(960, 600, Phaser.AUTO, 'game');
-    let game = new Phaser.Game(3392 ,460, Phaser.AUTO, 'game');
-    game.state.add('play', PlayState);
-    game.state.start('play');
-};
+
+var isMobile=navigator.userAgent.indexOf("Mobile");
+if (isMobile>-1)
+     {
+        isMobile=true;
+     }
+     else
+     {
+        isMobile=false;
+     }
+
+    if (isMobile==false) {
+        //desktop laptop
+        if (useLandscape == true) {
+            game = new Phaser.Game(640, 480, Phaser.AUTO, "ph_game");
+        } else {
+
+            game = new Phaser.Game(480, 640, Phaser.AUTO, "ph_game");
+        }
+
+    } else {
+        //mobile device
+        game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.AUTO, "ph_game");
+    }
+
+    game.state.add("StateMain",StateMain);
+    game.state.add("StateOver", StateOver);
+    game.state.add("StateTitle", StateTitle);
+    game.state.add("StateInstructions", StateInstructions);
+    game.state.start("StateTitle");
+}
