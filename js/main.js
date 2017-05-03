@@ -19,7 +19,7 @@ if (isMobile>-1)
     if (isMobile==false) {
         //desktop laptop
         if (useLandscape == true) {
-            game = new Phaser.Game(640, 480, Phaser.AUTO, "ph_game");
+            game = new Phaser.Game(480, 240, Phaser.AUTO, "ph_game");
         } else {
 
             game = new Phaser.Game(480, 640, Phaser.AUTO, "ph_game");
@@ -34,5 +34,5 @@ if (isMobile>-1)
     game.state.add("StateOver", StateOver);
     game.state.add("StateTitle", StateTitle);
     game.state.add("StateInstructions", StateInstructions);
-    game.state.start("StateTitle");
+    game.state.start("StateMain");
 }

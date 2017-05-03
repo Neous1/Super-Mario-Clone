@@ -1,4 +1,4 @@
-var stateInstructions={    
+var StateInstructions={    
     
    preload:function()
     {
