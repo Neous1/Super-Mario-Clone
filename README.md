@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Super-Mario-Clone
 
 Mario sprites obtained from : https://www.spriters-resource.com/nes/supermariobros/
@@ -35,3 +36,7 @@ python -m SimpleHTTPServer [port]
 
 Python 3 on port 8000 
 python3 -m http.server
+||||||| merged common ancestors
+=======
+# Super-Mario-Clone
+>>>>>>> 3182a619e20c9a52fe69e9b878b3a74411f63fcb
